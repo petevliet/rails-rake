@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>Events</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>topic</th>
+      <th>date and time</th>
+      <th>location</th>
+      <th>number of attendees</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.id %></td>
+        <td><%= event.topic %></td>
+        <td><%= event.date_time.strftime("%a %b %e %R %Y") %></td>
+        <td><%= event.location %></td>
+        <td><%= event.attendees %></td>
+        <td><%= event.notes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
